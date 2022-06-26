@@ -1,0 +1,52 @@
+<body class="background">
+  <div class="users-page w3-container w3-content" style="max-width:1400px;margin-top:80px">
+    <div class="find-friends-title-div">
+  
+      <h1 id="friends-align">Find a friend</h1>
+      
+    </div>
+
+      <div class="add-friends-container w3-container w3-card post-bgc w3-round-xlarge w3-margin">
+     
+        <div>
+
+          <div class="add-friends-rows-container">
+            {{#each users}}
+              <div class="add-friends-name-and-photo-row">
+                <div class="add-friends-name-row">
+                  {{this.name}}
+                </div>
+
+                <div class="add-friends-photo-row">
+                  {{#if this.profile_picture}}
+                    <img alt="Avatar" id="timeline-profile-photo" class="w3-circle" style="width:80px" src={{this.profile_picture}}> 
+                  {{else}}
+                    <img alt="Avatar" id="timeline-profile-photo" class="w3-circle" style="width:80px" src="/images/cutie-pie.jpeg">
+                  {{/if}}
+                </div>
+
+              </div>
+
+              {{#if this.friended}}
+              <div class="add-friends-button-row">
+                <p class="">You are friends</p>
+              </div>
+              {{else}}
+                <div class="add-friends-button-row">
+                  <form id="add-friend-form" action="/friends" method="post">
+                    <input id="user_id" name="user_id" type="hidden" value="{{this._id}}">
+                    <button id="add-friend-button" class="add-friend-button new-post-link w3-button w3-theme w3-margin-bottom w3-round-large">Add friend</button>
+                  </form>
+                </div>
+              {{/if}}
+
+            {{/each}}
+          </div>
+
+        </div>
+        
+    </div>
+
+  </div>
+
+</body>

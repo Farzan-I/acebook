@@ -1,0 +1,76 @@
+<div class="whole-page">
+  <div>
+    <div class="main-title">
+      <h1>Profile</h1>
+    </div>
+
+    <div class="profile-grey-div">
+      
+      {{#if user.profileOwner}}
+        <h2>Hi {{user.name}}!</h2>
+      {{/if}}
+    
+      {{#if user.profile_picture}}
+        <img id="profile-photo" src={{user.profile_picture}}>
+      {{else}}
+        <img id="profile-photo" src="/images/cutie-pie.jpeg" width="100" height="100"/>
+      {{/if}}
+
+    {{#if user.profileOwner}}
+      <div class="upload-profile-photo-form-div">
+        <form id="upload-profile-photo-form" action="/profile" method="post" enctype="multipart/form-data">
+          <div class="upload-pic-button-div">
+            <label class="profile-button" for="img">Select Image</label>
+            <input type="file" id="img" name="image" accept="image/*" class="hidden" required> 
+          </div>
+
+        <div class="upload-pic-button-div">
+          <label class="profile-button ppSubmit" for="ppSubmit">Update Profile</label>
+          <input id="ppSubmit" class="hidden" type="submit" name="upload" value="Update Profile" >
+        </div>
+
+          <div class="flex-container">
+            <img id="preview" src="" class="hidden">
+          </div>
+
+        </form>
+      </div>
+      {{/if}}
+
+      <hr>
+
+      <h2>Friends</h2>
+
+      <div class="friends-flex-container">
+          {{#each user.friends}}
+            <div class="friend">
+
+              <div class="friend-name">
+                {{this.name}}
+              </div>
+
+              <div class="friend-profile-pic">
+                <a href="/profile/{{this._id}}">
+                  {{#if this.profile_picture}}
+                    <img alt="Avatar" id="timeline-profile-photo" class="w3-left w3-circle w3-margin-right" style="width:80px" src={{this.profile_picture}}> 
+                  {{else}}
+                    <img alt="Avatar" id="timeline-profile-photo" class="w3-left w3-circle w3-margin-right" style="width:80px" src="/images/cutie-pie.jpeg">
+                  {{/if}}
+                </a>
+              </div>
+            </div>
+          {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  img.onchange = evt => {
+  const [file] = img.files
+  if (file) {
+    preview.src = URL.createObjectURL(file)
+    preview.style.display = "block"
+  }
+}
+</script>
