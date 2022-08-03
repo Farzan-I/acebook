@@ -13,9 +13,6 @@ $$ |  $$ |\$$$$$$$\ \$$$$$$$\ $$$$$$$  |\$$$$$$  |\$$$$$$  |$$ | \$$\
 
 | [Contributors](#contributors) | [Project description](#project-description) | [Production](#production) | [Demo](#demo) | [Technologies used](#technologies-used) | [How to run locally](#how-to-run-locally) | [Card wall](#card-wall) | [Team approach](#team-approach) | [User stories](#user-stories) | [Further User Stories](#further-user-stories) | [Minimum Viable Product](#minimum-viable-product-mvp) | [Wireframes](#wireframes) | [Edge cases](#edge-cases) | [Future improvements](#future-improvements) |
 
-### Forked from [Luke Storey](https://github.com/lukestorey95/acebook)
-[![Tests](https://github.com/lukestorey95/acebook/actions/workflows/test.yml/badge.svg)](https://github.com/lukestorey95/acebook/actions/workflows/test.yml)
-
 ## Contributors
 - [Alexandros Papagiannis](https://github.com/Alexandros91)
 - [Erlantz Ramos Sanchez](https://github.com/ErlantzR)
